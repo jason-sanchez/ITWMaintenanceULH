@@ -1,0 +1,110 @@
+﻿<%@ Master Language="VB" MasterPageFile="~/Nursing/Notes/NursingNoteMainMaster.master" AutoEventWireup="false" CodeFile="NursingNoteTreeMaster.master.vb" Inherits="Nursing_Notes_NursingNoteTreeMaster" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <asp:ContentPlaceHolder ID="head" runat="server" />
+    
+    <link type="text/css" rel="stylesheet" href="../../_includes/webtoolkit.contextmenu.css" />
+    <script type="text/javascript" src="webtoolkit.contextmenu.js"></script>
+    <script type="text/javascript">
+        SimpleContextMenu.setup({ 'preventDefault': false, 'preventForms': false });
+        SimpleContextMenu.attach('NursingNoteFolder', 'FolderContextMenu');
+    </script>
+    
+    <script type="text/javascript" language="javascript">
+        function ShowNursingNoteTree() {
+            var theTree = document.getElementById("NursingNoteTreeDiv");
+            var theLink = document.getElementById("ToggleNursingNoteTreeLink");
+
+            theTree.style.display = "block";
+            if (theLink != null)
+                theLink.innerHTML = "Hide Nursing Note Tree";
+        }
+        function HideNursingNoteTree() {
+            var theTree = document.getElementById("NursingNoteTreeDiv");
+            var theLink = document.getElementById("ToggleNursingNoteTreeLink");
+
+            theTree.style.display = "none";
+            if (theLink != null)
+                theLink.innerHTML = "Show Nursing Note Tree";
+        }
+        function ToggleNursingNoteTree() {
+            var theTree = document.getElementById("NursingNoteTreeDiv");
+            var theLink = document.getElementById("ToggleNursingNoteTreeLink");
+            if (theTree.style.display == "none") {
+                theTree.style.display = "block";
+                if (theLink != null)
+                    theLink.innerHTML = "Hide Nursing Note Tree";
+            } else {
+                theTree.style.display = "none";
+                if (theLink != null)
+                    theLink.innerHTML = "Show Nursing Note Tree";
+            }
+        }
+    </script>
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContentPlaceHolder" Runat="Server">
+    <!-- Folder Context Menu -->
+    <ul id="FolderContextMenu" class="SimpleContextMenu">
+        <% If Not IsNothing(Session("CopiedNursingNoteForm")) Then%>
+            <li><a id="a_PasteForm" href="">Paste Copied Form</a></li>
+        <% End If %>
+        <li><a id="a_NewForm" href="">Add New Form</a></li>
+        <li><a id="a_NewFolder" href="">Add New Folder</a></li>
+    </ul>
+    
+    <div style="float: left; clear: both; width: 100%; margin-bottom: 4px;">
+        <asp:Panel ID="CopiedFormPanel" runat="server" Visible="false" style="float: left; clear: left; padding-bottom: 7px; width: 100%;">
+            <asp:Label ID="CopiedFormLabel" runat="server" CssClass="Attention" />&nbsp;&nbsp;&nbsp;<asp:LinkButton ID="ClearCopiedLinkButton" runat="server"
+            Text="Clear" />
+        </asp:Panel>
+        <asp:Panel ID="ToggleNursingNoteLinkPanel" runat="server" style="float: left; clear: left; padding-bottom: 0px; margin-bottom: 0px; width: 100%;">
+            <a id="ToggleNursingNoteTreeLink" href="javascript:ToggleNursingNoteTree();">Hide Nursing Note Tree</a>
+        </asp:Panel>
+    </div>
+    
+    <div style="clear: both; margin-top: 0px; overflow: hidden;">
+    
+    <div id="NursingNoteTreeDiv" class="form" style="float: left; padding: 5px; margin-right: 7px;">
+        <div>
+            <div style="border-bottom: 1px solid #000000; padding-bottom: 5px; margin-bottom: 5px;">
+                <table border="0" cellpadding="3" cellspacing="0" width="100%">
+                    <tr>
+                        <td style="font-size: 1.05em; font-weight: bold;">Discipline:</td>
+                        <td align="right"><asp:CheckBox ID="AllDisciplinesCheckBox" runat="server" Text="All Disciplines" 
+                            Checked="false" AutoPostBack="true" /></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <asp:DropDownList ID="DisciplineDropDownList" runat="server" 
+                                DataTextField="Value" DataValueField="Key" AutoPostBack="True" Font-Size="1.05em">
+                            </asp:DropDownList>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div style="clear: both; margin-bottom: 8px;">
+                <div style="float: left; width: 50%;">
+                    <asp:LinkButton ID="AddNewFolderLinkButton" runat="server">Add New Folder</asp:LinkButton>
+                </div>
+                <div style="float: right; width: 40%; text-align: right;">
+                    <asp:CheckBox ID="ActiveOnlyCheckBox" runat="server" Text="Active Only" AutoPostBack="true" />
+                </div>
+            </div>
+            
+            <asp:TreeView ID="TreeView1" runat="server" DataSourceID="TreeXmlDataSource" 
+                EnableViewState="False" ExpandDepth="0">
+                <DataBindings>
+                    <asp:TreeNodeBinding DataMember="TreeNode" TextField="Name" ValueField="ID" />
+                </DataBindings>
+            </asp:TreeView>
+            <asp:XmlDataSource ID="TreeXmlDataSource" runat="server" EnableCaching="False" XPath="/*/*"></asp:XmlDataSource>
+        </div>
+    </div>
+    
+    <div style="float: left;" class="form">
+        <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server" />
+    </div>
+    
+    </div>
+</asp:Content>

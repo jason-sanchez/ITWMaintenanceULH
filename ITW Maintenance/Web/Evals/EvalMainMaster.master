@@ -1,0 +1,33 @@
+﻿<%@ Master Language="VB" MasterPageFile="~/MainMaster.master" AutoEventWireup="false" CodeFile="EvalMainMaster.master.vb" Inherits="Evals_EvalMainMaster" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <asp:ContentPlaceHolder ID="head" runat="server" />
+    
+    <script type="text/javascript">
+        function SearchIfEnter(keyStroke) {
+            isNetscape = (document.layers);
+            keyCode = (isNetscape) ? keyStroke.which : event.keyCode;
+            if (keyCode == 13)
+                Search();
+        }
+
+        function Search() {
+            var searchText = document.getElementById("SearchTextBox").value;
+            if (searchText != "") {
+                event.cancelBubble = true;
+                event.returnValue = false;
+                window.location.href = "SearchResults.aspx?SearchText=" + searchText;
+            }
+        }
+    </script>
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContentPlaceHolder" Runat="Server">
+    <div style="float: right; text-align: right;">
+        Search: <input type="text" id="SearchTextBox" style="width: 200px" onkeypress="SearchIfEnter();" /> 
+        <input type="button" id="SearchButton" value="Search" onclick="Search();" />
+    </div>
+    
+    <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server" />
+</asp:Content>
+

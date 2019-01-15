@@ -1,0 +1,21 @@
+ul.SimpleContextMenu {
+	display: none;
+	position: absolute;
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+	border: 1px solid #000000;
+}
+
+ul.SimpleContextMenu li a {
+	display: block;
+	width: 150px;
+	padding: 3px 10px 3px 10px;
+	text-decoration: none;
+	background: #00DC73;
+}
+
+ul.SimpleContextMenu li a:hover {
+	text-decoration: none;
+	background: #6BEFB4;
+}

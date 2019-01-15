@@ -1,0 +1,89 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ITWMaintenance.Library", "ITWMaintenance.Library\ITWMaintenance.Library.vbproj", "{986BD1CF-E2C1-4B6D-8678-3DFD652A5CD8}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ITWMaintenanceTest", "ITWMaintenanceTest\ITWMaintenanceTest.vbproj", "{C3E81DCC-9EF2-4768-BBCF-AB94791B1296}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "BuildNursingNoteOptions", "Restructure\NursingNotes\BuildNursingNoteOptions\BuildNursingNoteOptions.vbproj", "{0361168C-0215-4463-9B38-D2D857F9D28B}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "BuildEvalOptions", "Restructure\Evals\BuildEvalOptions\BuildEvalOptions.vbproj", "{72F1A47D-1E75-4038-92A9-96DE8AA3ADBB}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CopyOrderFormFields", "Restructure\Orders\CopyOrderFormFields\CopyOrderFormFields.vbproj", "{1438B797-EA8A-4F01-9BF8-AE975EB7EF1D}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Web", "http://localhost/ITWMaintenance3.5/Web", "{48522B82-AA0F-487C-AF2F-DC3B541B4EE0}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "false"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv3.5"
+		Debug.AspNetCompiler.VirtualPath = "/Web"
+		Debug.AspNetCompiler.PhysicalPath = "C:\inetpub\wwwroot\ITWMaintenance3.5\Web\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Web\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/Web"
+		Release.AspNetCompiler.PhysicalPath = "C:\inetpub\wwwroot\ITWMaintenance3.5\Web\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\Web\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "C:\inetpub\wwwroot\ITWMaintenance3.5\Web\"
+	EndProjectSection
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "false"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv3.5"
+		Debug.AspNetCompiler.VirtualPath = "/Web"
+		Debug.AspNetCompiler.PhysicalPath = "C:\inetpub\wwwroot\ITWMaintenance3.5\Web\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Web\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/Web"
+		Release.AspNetCompiler.PhysicalPath = "C:\inetpub\wwwroot\ITWMaintenance3.5\Web\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\Web\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "C:\inetpub\wwwroot\ITWMaintenance3.5\Web\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{986BD1CF-E2C1-4B6D-8678-3DFD652A5CD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{986BD1CF-E2C1-4B6D-8678-3DFD652A5CD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{986BD1CF-E2C1-4B6D-8678-3DFD652A5CD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{986BD1CF-E2C1-4B6D-8678-3DFD652A5CD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3E81DCC-9EF2-4768-BBCF-AB94791B1296}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3E81DCC-9EF2-4768-BBCF-AB94791B1296}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3E81DCC-9EF2-4768-BBCF-AB94791B1296}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3E81DCC-9EF2-4768-BBCF-AB94791B1296}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0361168C-0215-4463-9B38-D2D857F9D28B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0361168C-0215-4463-9B38-D2D857F9D28B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0361168C-0215-4463-9B38-D2D857F9D28B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0361168C-0215-4463-9B38-D2D857F9D28B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72F1A47D-1E75-4038-92A9-96DE8AA3ADBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72F1A47D-1E75-4038-92A9-96DE8AA3ADBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72F1A47D-1E75-4038-92A9-96DE8AA3ADBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72F1A47D-1E75-4038-92A9-96DE8AA3ADBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1438B797-EA8A-4F01-9BF8-AE975EB7EF1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1438B797-EA8A-4F01-9BF8-AE975EB7EF1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1438B797-EA8A-4F01-9BF8-AE975EB7EF1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1438B797-EA8A-4F01-9BF8-AE975EB7EF1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48522B82-AA0F-487C-AF2F-DC3B541B4EE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48522B82-AA0F-487C-AF2F-DC3B541B4EE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48522B82-AA0F-487C-AF2F-DC3B541B4EE0}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{48522B82-AA0F-487C-AF2F-DC3B541B4EE0}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

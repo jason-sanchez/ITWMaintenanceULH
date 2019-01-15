@@ -1,0 +1,39 @@
+﻿<%@ Master Language="VB" CodeFile="MainMaster.master.vb" Inherits="MainMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>ITW Maintenance</title>
+    
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body id="MainBody" runat="server">
+    <form id="form1" runat="server">
+    <div>
+        <div style="height: 40px; overflow: hidden;">
+            <div style="float: left; vertical-align: middle;"><h1 style="margin: 0px; padding: 0px;">ITW Maintenance 3.5</h1></div>
+            <div style="float: right; text-align: right;">
+                <asp:Label ID="UserLabel" runat="server" Font-Bold="true" /><br />
+                <asp:LinkButton ID="LogOutButton" runat="server" Text="Log Out" CssClass="Attention" CausesValidation="false" />
+            </div>
+        </div>
+        <asp:Panel ID="NavBar" runat="server" CssClass="NavBar">
+            <asp:BulletedList ID="MenuItemBulletedList" runat="server" DisplayMode="LinkButton"
+                DataValueField="Link" DataTextField="Description">
+            </asp:BulletedList>
+        </asp:Panel>
+        <asp:Panel ID="SubLinksNavBarDiv" runat="server" CssClass="SubLinksDiv">
+            <asp:BulletedList ID="SubMenuItemBulletedList" runat="server" DisplayMode="LinkButton"
+                DataValueField="Link" DataTextField="Description">
+            </asp:BulletedList>
+        </asp:Panel>
+        
+        <asp:ContentPlaceHolder id="MainContentPlaceHolder" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

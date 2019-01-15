@@ -1,0 +1,45 @@
+﻿<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+
+<asp:RequiredFieldValidator runat="server" Font-Bold="true" ForeColor="#DC9100" />
+<asp:CompareValidator runat="server" Font-Bold="true" ForeColor="#DC9100" />
+<asp:RegularExpressionValidator runat="server" Font-Bold="true" ForeColor="#DC9100" />
+
+<asp:GridView runat="server" BorderStyle="None" GridLines="None" PagerStyle-CssClass="GridViewPagerStyle">
+    <HeaderStyle CssClass="GridHeader" HorizontalAlign="Left" VerticalAlign="Bottom" />
+    <RowStyle CssClass="gridRow" />
+    <AlternatingRowStyle CssClass="gridRowAlt" />
+</asp:GridView>
+
+<asp:GridView SkinID="ClickableGrid" runat="server" BorderStyle="None" GridLines="None" PagerStyle-CssClass="GridViewPagerStyle">
+    <HeaderStyle CssClass="GridHeader" HorizontalAlign="Left" VerticalAlign="Bottom" />
+    <RowStyle CssClass="gridRow clickable" />
+    <AlternatingRowStyle CssClass="gridRowAlt clickable" />
+</asp:GridView>
+
+<asp:TreeView runat="server" ShowLines="True" ImageSet="XPFileExplorer">
+    <SelectedNodeStyle BackColor="#F6F45C" ForeColor="Transparent" />
+</asp:TreeView>
+
+<asp:DetailsView SkinID="InsertDetails" runat="server" BorderStyle="None" BorderWidth="0px" GridLines="None" CellPadding="3">
+    <InsertRowStyle BorderStyle="None" BorderWidth="0px" />
+</asp:DetailsView>
+
+<asp:DetailsView runat="server" BorderStyle="None" BorderWidth="0px" GridLines="None" CellPadding="3">
+</asp:DetailsView>
+
+<asp:LinkButton runat="server" SkinID="ItalicsLinkButton" Font-Italic="true" Font-Underline="true" />
+<asp:HyperLink runat="server" SkinID="ItalicsHyperLink" Font-Italic="true" Font-Underline="true" />

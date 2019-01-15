@@ -1,0 +1,2 @@
+
+    <add key="MinimumSecurityLevel" value="50" />

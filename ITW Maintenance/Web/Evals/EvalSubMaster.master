@@ -1,0 +1,95 @@
+﻿<%@ Master Language="VB" MasterPageFile="~/Evals/EvalMainMaster.master" AutoEventWireup="false" CodeFile="EvalSubMaster.master.vb" Inherits="Evals_EvalSubMaster" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <asp:ContentPlaceHolder ID="head" runat="server" />
+    
+    <link type="text/css" rel="stylesheet" href="../_includes/webtoolkit.contextmenu.css" />
+    <script type="text/javascript" src="webtoolkit.contextmenu.js"></script>
+    <script type="text/javascript">
+        SimpleContextMenu.setup({ 'preventDefault': false, 'preventForms': false });
+        SimpleContextMenu.attach('EvalFolder', 'FolderContextMenu');
+    </script>
+    
+    <script type="text/javascript" language="javascript">
+        function ShowEvalTree() {
+            var theTree = document.getElementById("EvalTreeDiv");
+            var theLink = document.getElementById("ToggleEvalTreeLink");
+
+            theTree.style.display = "block";
+            if (theLink != null)
+                theLink.innerHTML = "Hide Eval Tree";
+        }
+        function HideEvalTree() {
+            var theTree = document.getElementById("EvalTreeDiv");
+            var theLink = document.getElementById("ToggleEvalTreeLink");
+
+            theTree.style.display = "none";
+            if (theLink != null)
+                theLink.innerHTML = "Show Eval Tree";
+        }
+        function ToggleEvalTree() {
+            var theTree = document.getElementById("EvalTreeDiv");
+            var theLink = document.getElementById("ToggleEvalTreeLink");
+            if (theTree.style.display == "none") {
+                theTree.style.display = "block";
+                if (theLink != null)
+                    theLink.innerHTML = "Hide Eval Tree";
+            } else {
+                theTree.style.display = "none";
+                if (theLink != null)
+                    theLink.innerHTML = "Show Eval Tree";
+            }
+        }
+    </script>
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContentPlaceHolder" Runat="Server">
+    <!-- Folder Context Menu -->
+    <ul id="FolderContextMenu" class="SimpleContextMenu">
+        <% If Not IsNothing(Session("CopiedEvalForm")) Then%>
+            <li><a id="a_PasteForm" href="">Paste Copied Form</a></li>
+        <% End If %>
+        <li><a id="a_NewForm" href="">Add New Form</a></li>
+        <li><a id="a_NewFolder" href="">Add New Folder</a></li>
+    </ul>
+    
+    <div style="float: left; width: 60%; margin-bottom: 4px;">
+        <div style="float: left;">
+            <h3 style="margin-bottom: 7px;">
+                <a href="Level1Folders.aspx">Home</a> - 
+                <asp:HyperLink ID="Level1EvalsLink" runat="server" /> - 
+                <asp:Literal ID="Level2EvalLabel" runat="server" />
+            </h3>
+        </div>
+    </div>
+    <div style="float: left; clear: both; width: 100%; margin-bottom: 4px;">
+        <asp:Panel ID="CopiedFormPanel" runat="server" Visible="false" style="float: left; clear: left; padding-bottom: 7px; width: 100%;">
+            <asp:Label ID="CopiedFormLabel" runat="server" CssClass="Attention" />&nbsp;&nbsp;&nbsp;<asp:LinkButton ID="ClearCopiedLinkButton" runat="server"
+            Text="Clear" />
+        </asp:Panel>
+        <asp:Panel ID="ToggleEvalLinkPanel" runat="server" style="float: left; clear: left; padding-bottom: 0px; margin-bottom: 0px; width: 100%;">
+            <a id="ToggleEvalTreeLink" href="javascript:ToggleEvalTree();">Hide Eval Tree</a>
+        </asp:Panel>
+    </div>
+    
+    <div style="clear: both; margin-top: 0px; overflow: hidden;">
+    
+    <div id="EvalTreeDiv" class="form" style="float: left; padding: 5px; margin-right: 7px;">
+        <div>
+            <div style="text-align: right;"><asp:CheckBox ID="ActiveOnlyCheckBox" runat="server" Text="Active Only" AutoPostBack="true" /></div>
+            <asp:TreeView ID="TreeView1" runat="server" DataSourceID="TreeXmlDataSource" EnableViewState="False" ExpandDepth="1">
+                <DataBindings>
+                    <asp:TreeNodeBinding DataMember="TreeNode" TextField="Description" ValueField="EvalID" />
+                </DataBindings>
+            </asp:TreeView>
+            <asp:XmlDataSource ID="TreeXmlDataSource" runat="server" EnableCaching="False" XPath="/*/*"></asp:XmlDataSource>
+        </div>
+    </div>
+    
+    <div style="float: left;" class="form">
+        <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server" />
+    </div>
+    
+    </div>
+</asp:Content>
+
